@@ -1,0 +1,778 @@
+
+/* Estilos Gerais do Corpo */
+body {
+    padding-top: 0px;
+    margin: 0; /* remove margem padrão do body */
+    font-family: Helvetica, sans-serif;
+    box-sizing: border-box; /* Garante que padding e borda sejam incluídos na largura/altura */
+    background-color: #f4f4f4; /* Adicionado um fundo claro para o corpo */
+    color: #333; /* Cor de texto padrão */
+}
+
+/* Estilos para o Banner */
+.banner {
+    width: 100%;
+    min-height: 550px; /* Ajuste a altura mínima do seu banner */
+    background-image: url(imagens/banner_opcao01.png);
+    background-size: cover; /* Garante que a imagem cubra toda a área */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+    display: flex; /* Adicionado para centralizar o conteúdo do banner */
+    flex-direction: column; /* Conteúdo em coluna */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    color: white; /* Cor do texto no banner */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para o texto no banner */
+    position: relative; /* Necessário para posicionamento do logo/conteúdo se forem absolutos */
+}
+
+.banner .logo {
+    max-width: 150px; /* Ajuste o tamanho do logo */
+    height: auto;
+    margin-bottom: 20px; /* Espaço abaixo do logo */
+}
+
+.banner-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+}
+
+.banner-content p {
+    font-size: 1.5em;
+}
+
+/* Estilos para a Navbar */
+.navbar {
+    position: fixed; /* Fixa a navbar no topo da tela */
+    top: 0; /* Alinha a navbar ao topo */
+    width: 100%; /* Garante que a navbar ocupe toda a largura */
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente para a navbar */
+    z-index: 1000; /* Garante que a navbar fique acima de outros elementos */
+    padding: 15px 0; /* Espaçamento interno superior e inferior */
+    box-sizing: border-box; /* Inclui padding e borda na largura/altura total */
+}
+
+.navbar #menu {
+    list-style: none; /* Remove os marcadores da lista */
+    display: flex; /* Deixa os itens na horizontal */
+    gap: 200px; /* Espaço entre os itens da lista */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    margin: 0; /* Remove a margem padrão da lista */
+    padding: 0; /* Remove o padding padrão da lista */
+}
+
+.navbar #menu li a {
+    color: white; /* Cor do texto dos links */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    font-weight: bold; /* Deixa o texto em negrito */
+    padding: 5px 10px; /* Adiciona um pouco de padding nos links para facilitar o clique */
+    transition: color 0.3s ease; /* Transição suave para a cor do texto */
+    font-family: Helvetica, sans-serif;
+}
+
+.navbar #menu li a:hover {
+    color: #ffd700; /* Cor dourada para o hover */
+}
+
+/* Link da página atual em destaque */
+.navbar #menu li a.active-link {
+    color: #ffd700; /* Cor dourada para o link ativo */
+    text-decoration: underline;
+}
+
+/* Seção de Motos em Destaque */
+.motoDestaque {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #fff;
+    margin: 20px auto;
+    max-width: 1200px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.motoDestaque h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #222;
+    font-family: Helvetica, sans-serif;
+}
+
+.destaque-items {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha em telas menores */
+    gap: 30px; /* Espaçamento entre os itens em destaque */
+}
+
+.destaque-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 60%; /* Ajuste a largura para duas colunas, descontando o gap */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo dentro do item */
+    box-sizing: border-box; /* Inclui padding na largura total */
+}
+
+.destaque-item h3 {
+    font-size: 1.8em;
+    color: #444;
+    margin-bottom: 15px;
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+}
+
+.destaque-item p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.btn-ver-detalhes {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-ver-detalhes:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos Específicos do Carrossel */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px; /* Ajuste a largura máxima do carrossel */
+    margin: 0 auto 20px; /* Centraliza o carrossel e adiciona espaço abaixo */
+    overflow: hidden; /* Esconde as imagens que estão fora da visualização */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-images {
+    display: flex; /* Organiza as imagens em uma linha */
+    transition: transform 0.5s ease-in-out; /* Transição suave para o deslizamento */
+}
+
+.carousel-images img {
+    width: 100%; /* Cada imagem ocupa a largura total do seu contêiner */
+    display: block; /* Remove espaços extras abaixo das imagens */
+    flex-shrink: 0; /* Impede que as imagens encolham */
+    height: auto;
+    object-fit: cover; /* Garante que as imagens cubram a área sem distorção */
+    max-height: 400px; /* Limita a altura da imagem para manter os carrosséis consistentes */
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.5em;
+    z-index: 10; /* Garante que os botões fiquem acima das imagens */
+    border-radius: 50%; /* Torna os botões circulares */
+    outline: none; /* Remove contorno ao focar */
+    transition: background-color 0.3s ease;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px; /* Espaçamento entre os pontos */
+}
+
+.carousel-dots .dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-dots .dot.active {
+    background-color: #ffd700; /* Cor dourada para o ponto ativo */
+    transform: scale(1.2);
+}
+
+/* Rodapé (Footer) */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer p {
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+.footer a {
+    color: #ffd700; /* Cor dourada para links no rodapé */
+    font-family: Helvetica, sans-serif;
+}
+
+/* --- Estilos para a Página de Destaque da Moto --- */
+/* Wrapper de Conteúdo Principal */
+.content-wrapper {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Cabeçalho da Página de Destaque */
+.moto-destaque-header {
+    text-align: center;
+    padding: 40px 0 20px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 30px;
+}
+
+.moto-destaque-header h1 {
+    font-size: 3em;
+    color: #222;
+    margin-bottom: 10px;
+    font-family: Helvetica, sans-serif;
+}
+
+.moto-destaque-header .slogan {
+    font-size: 1.3em;
+    color: #666;
+    font-style: italic;
+}
+
+/* Seção de Galeria e Detalhes */
+.moto-gallery-details {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar em telas menores */
+    gap: 40px;
+    align-items: flex-start; /* Alinha o topo dos itens */
+    margin-bottom: 40px;
+}
+
+/* Garante que o carrossel ocupe seu espaço e o preço fique logo abaixo dele */
+.gallery-carousel-container {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+    margin: 0;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    order: 2;
+}
+
+.moto-price-destaque {
+    font-size: 2.8em; /* Tamanho maior para o preço de destaque */
+    font-weight: bold;
+    color: #28a745; /* Cor verde para o preço */
+    text-align: center; /* Centraliza o preço */
+    width: 100%; /* Garante que ocupe a largura total disponível */
+    order: 3; /* Faz com que o preço apareça depois do carrossel */
+    margin-top: 20px; /* Espaço entre o carrossel e o preço */
+    flex-basis: 100%; /* Faz com que ocupe toda a linha disponível em flexbox */
+}
+
+/* Seção dos detalhes da Moto */
+.moto-details {
+    flex: 1; /* Ocupa o espaço restante */
+    min-width: 300px; /* Largura mínima para os detalhes */
+    text-align: left;
+    order: 1;
+}
+
+.moto-details h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+    font-family: Helvetica, sans-serif;
+}
+
+.moto-details p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.moto-details ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding: 0;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.moto-details ul li {
+    margin-bottom: 8px;
+}
+
+/* Seção de Especificações Técnicas */
+.moto-specifications {
+    margin-bottom: 40px;
+    padding: 20px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.moto-specifications h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 25px;
+    font-family: Helvetica, sans-serif;
+}
+
+.moto-specifications table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.moto-specifications th,
+.moto-specifications td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 1.05em;
+}
+
+.moto-specifications th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #555;
+}
+
+.moto-specifications tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.moto-actions {
+    text-align: center;
+    padding: 30px 0 50px;
+}
+
+.moto-actions h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 15px;
+    font-family: Helvetica, sans-serif;
+}
+
+.moto-actions p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 30px; /* Adicionado espaço abaixo da descrição */
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaço entre os botões */
+    margin-top: 20px;
+    flex-wrap: wrap; /* Para botões quebrarem linha em telas menores */
+}
+
+.btn-action {
+    display: inline-block;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    min-width: 200px; /* Largura mínima para os botões */
+    text-align: center;
+}
+
+.btn-contact {
+    background-color: #007bff; /* Azul para Contato */
+    color: white;
+    border: 2px solid #007bff;
+}
+
+.btn-contact:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* --- Estilos para a Página de Contato --- */
+.form-group {
+    margin-bottom: 20px; /* Espaço entre os grupos de campo */
+}
+
+.form-group label {
+    display: block; /* Garante que o label ocupe sua própria linha */
+    margin-bottom: 8px; /* Espaço entre o label e o campo de entrada */
+    font-weight: bold; /* Deixa o texto do label em negrito */
+    color: #444; /* Cor mais escura para o label */
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group textarea {
+    width: calc(100% - 22px); /* Ocupa quase 100% da largura, descontando padding e borda */
+    padding: 10px; /* Espaçamento interno */
+    border: 1px solid #ccc; /* Borda padrão */
+    border-radius: 4px; /* Cantos levemente arredondados */
+    font-size: 1em; /* Tamanho da fonte */
+    box-sizing: border-box; /* Inclui padding e borda na largura total do elemento */
+}
+
+.form-group textarea {
+    resize: vertical; /* Permite que o usuário redimensione o textarea verticalmente */
+}
+
+.btn-submit {
+    display: block; /* Ocupa a largura total */
+    width: 100%; /* Largura total do contêiner pai */
+    padding: 15px; /* Espaçamento interno */
+    background-color: #28a745; /* Cor de fundo verde para o botão de envio */
+    color: white; /* Cor do texto do botão */
+    border: none; /* Remove a borda padrão */
+    border-radius: 5px; /* Cantos arredondados */
+    font-size: 1.2em; /* Tamanho da fonte maior */
+    font-weight: bold; /* Texto em negrito */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    transition: background-color 0.3s ease; /* Transição suave na cor de fundo */
+}
+
+.btn-submit:hover {
+    background-color: #218838; /* Cor de fundo mais escura ao passar o mouse */
+}
+
+.contact-header {
+    text-align: center;
+    padding: 40px 0 20px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 30px;
+}
+
+.contact-header h1 {
+    font-size: 2.8em;
+    color: #222;
+    margin-bottom: 10px;
+    font-family: Helvetica, sans-serif;
+}
+
+.contact-header p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto 50px; /* Centraliza e adiciona espaço abaixo */
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    text-align: left;
+}
+
+/* --- Estilos para a Página de Agendamento de Test Drive --- */
+.testdrive-header {
+    text-align: center;
+    padding: 40px 0 20px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 30px;
+}
+
+.testdrive-header h1 {
+    font-size: 2.8em;
+    color: #222;
+    margin-bottom: 10px;
+    font-family: Helvetica, sans-serif;
+}
+
+.testdrive-header p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+.testdrive-form {
+    max-width: 700px;
+    margin: 0 auto 50px; /* Centraliza e adiciona espaço abaixo */
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    text-align: left;
+}
+
+/* --- Estilos para a Página de Catálogo de Motos --- */
+.catalog-header {
+    text-align: center;
+    padding: 40px 0 30px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 40px;
+}
+
+.catalog-header h1 {
+    font-size: 3em;
+    color: #222;
+    margin-bottom: 10px;
+    font-family: Helvetica, sans-serif;
+}
+
+.catalog-header p {
+    font-size: 1.2em;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.moto-category {
+    margin-bottom: 60px; /* Espaço entre as categorias */
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.moto-category h2 {
+    font-size: 2.5em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 10px;
+    font-family: Helvetica, sans-serif;
+}
+
+.moto-category h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #ffd700; /* Cor dourada para o sublinhado */
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.category-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os itens quando há espaço */
+    gap: 40px; /* Espaço entre as motos */
+}
+
+.moto-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex; /* Para foto e info lado a lado */
+    align-items: center; /* Alinha verticalmente */
+    width: 950px; /* Largura máxima para cada item de moto */
+    overflow: hidden; /* Garante que nada vaze */
+    flex-direction: row; /* Padrão: foto à esquerda, info à direita */
+}
+
+.moto-carousel-preview {
+    width: 450px; /* Largura fixa para o carrossel de preview */
+    flex-shrink: 0; /* Impede que o carrossel encolha */
+    height: 300px; /* Altura fixa para o preview */
+    border-radius: 8px 0 0 8px; /* Cantos arredondados apenas à esquerda */
+    box-shadow: none; /* Remove a sombra extra do carrossel principal */
+    overflow: hidden; /* Garante que as imagens do carrossel não vazem */
+}
+
+.moto-carousel-preview .carousel-images {
+    height: 100%; /* Garante que o contêiner de imagens preencha a altura do preview */
+}
+
+.moto-carousel-preview .carousel-images img {
+    height: 100%; /* Imagem ocupa 100% da altura do preview */
+    width: 100%;
+    object-fit: cover;
+    max-height: unset; /* Remove o max-height global para este carrossel pequeno */
+    border-radius: 0;
+}
+
+.moto-carousel-preview .carousel-button {
+    padding: 5px 8px;
+    font-size: 1em;
+    top: 45%; /* Ajusta a posição vertical dos botões no preview */
+}
+
+.moto-carousel-preview .carousel-dots {
+    bottom: 5px; /* Ajusta a posição vertical dos pontos no preview */
+    gap: 5px;
+}
+
+.moto-carousel-preview .carousel-dots .dot {
+    width: 8px;
+    height: 8px;
+}
+
+.moto-info {
+    flex-grow: 1; /* Ocupa o espaço restante */
+    padding: 20px;
+    text-align: left;
+}
+
+.moto-info h3 {
+    font-size: 1.6em;
+    color: #444;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-family: Helvetica, sans-serif;
+}
+
+.moto-info p {
+    font-size: 0.95em;
+    line-height: 1.5;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.moto-info .moto-price {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #28a745; /* Verde para o preço em destaque */
+    margin-bottom: 20px;
+}
+
+.moto-details .moto-price {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #28a745; /* Verde para o preço em destaque */
+    margin-bottom: 20px;
+}
+
+/* --- Estilos para a Página de Equipamentos --- */
+.equip-category {
+    margin-bottom: 60px; /* Espaço entre as categorias de equipamentos */
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.equip-category h2 {
+    font-size: 2.5em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 10px;
+    font-family: Helvetica, sans-serif;
+}
+
+.equip-category h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #ffd700; /* Cor dourada para o sublinhado */
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.equip-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: stretch; /* Garante que a descrição se estique */
+    width: 800px;
+    overflow: hidden;
+    flex-direction: row;
+}
+
+.equip-carousel-preview {
+    width: 300px; /* Largura fixa para o carrossel de preview de equipamento */
+    flex-shrink: 0;
+    height: 300px; /* Altura fixa para o preview de equipamento */
+    border-radius: 8px 0 0 8px;
+    box-shadow: none;
+    overflow: hidden;
+}
+
+.equip-carousel-preview .carousel-images {
+    height: 100%;
+}
+
+.equip-carousel-preview .carousel-images img {
+    height: 100%; /* Imagem ocupa 100% da altura do preview */
+    width: 100%;
+    object-fit: cover;
+    max-height: unset; /* Remove o max-height global para este carrossel pequeno */
+    border-radius: 0;
+}
+
+.equip-carousel-preview .carousel-button {
+    padding: 3px 6px; /* Botões menores para o preview de equipamento */
+    font-size: 0.9em;
+    top: 45%;
+}
+
+.equip-carousel-preview .carousel-dots {
+    bottom: 3px;
+    gap: 3px;
+}
+
+.equip-carousel-preview .carousel-dots .dot {
+    width: 6px;
+    height: 6px;
+}
+
+.equip-info {
+    flex-grow: 1; /* Ocupa o espaço restante */
+    padding: 20px;
+    text-align: left;
+}
+
+.equip-info h3 {
+    font-size: 1.5em;
+    color: #444;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-family: Helvetica, sans-serif;
+}
+
+.equip-info p {
+    font-size: 0.9em;
+    line-height: 1.4;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.equip-info .equip-price {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #28a745; /* Verde para o preço em destaque */
+    margin-bottom: 20px;
+}
