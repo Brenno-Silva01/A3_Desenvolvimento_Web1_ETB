@@ -4,7 +4,7 @@ Este é um site desenvolvido com **HTML**, **CSS** e **JavaScript**, que apresen
 
 ## 🌐 Acesse o site
 
-🔗 [Veja o site no GitHub Pages](https://brenno-silva01.github.io/A2_Desenvolvimento_Web1_ETB/)
+🔗 [Veja o site no GitHub Pages](https://brenno-silva01.github.io/A3_Desenvolvimento_Web1_ETB/)
 
 ## 💻 Tecnologias Utilizadas
 
