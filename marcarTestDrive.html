@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcar Test Drive - NewMotos Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <div class="banner"></div>
+
+        <div class="navbar">
+            <nav>
+                <ul id="menu">
+                    <li>
+                        <a href="index.html"> Página Principal </a>
+                    </li>
+                    <li>
+                        <a href="catalogoMotos.html"> Catálogo de Motos </a>
+                    </li>
+                    <li>
+                        <a href="equipamentos.html"> Equipamentos </a>
+                    </li>
+                    <li>
+                        <a href="marcarTestDrive.html" class="active-link"> Marque um Test Drive </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+    <div class="content-wrapper">
+        <div class="testdrive-header">
+            <h1>Agende Seu Test Drive</h1>
+            <p>Experimente a emoção de pilotar a sua próxima moto! Preencha o formulário abaixo e entraremos em contato para confirmar seu agendamento.</p>
+        </div>
+
+        <form class="testdrive-form" action="#" method="POST">
+            <div class="form-group">
+                <label for="td_nome">Nome Completo:</label>
+                <input type="text" id="td_nome" name="nome" required>
+            </div>
+
+            <div class="form-group">
+                <label for="td_email">E-mail:</label>
+                <input type="email" id="td_email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="td_telefone">Telefone:</label>
+                <input type="tel" id="td_telefone" name="telefone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="td_moto">Moto de Interesse:</label>
+
+                <select id="td_moto" name="moto_interesse" required>
+                    <option value="">Selecione uma Moto</option>
+                    <option value="Ducati Streetfighter V4S">Ducati Streetfighter V4S 2022</option>
+                    <option value="Outro Modelo">Outro Modelo (especifique na mensagem)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="td_data_preferida">Data Preferida:</label>
+                <input type="date" id="td_data_preferida" name="data_preferida" required min="2025-06-27">
+            </div>
+
+            <div class="form-group">
+                <label for="td_hora_preferida">Hora Preferida:</label>
+                <input type="time" id="td_hora_preferida" name="hora_preferida" required>
+            </div>
+
+            <div class="form-group">
+                <label for="td_mensagem">Mensagem / Dúvidas (opcional):</label>
+                <textarea id="td_mensagem" name="mensagem" rows="5"></textarea>
+            </div>
+            
+            <button type="submit" class="btn-submit">Agendar Test Drive</button>
+        </form>
+
+    </div>
+
+    <div class="footer">
+            <footer>
+                <p>
+                    Nosso contato: <br>
+                    Telefone: (61) 9 7777-3333 <br>
+                    Email: contato@newmotosshop.com.br <br>
+                    Endereço: Rua das Motos, 123 - Bairro Central, Brasília - DF <br>
+                    CEP: 21213-777
+                </p>
+                <p>
+                    &copy; 2025 NewMotos Shop. Todos os direitos reservados.<br>
+                    Desenvolvido por <a href="https://github.com/brenno-silva01">Brenno Oliveira</a>
+                </p>
+            </footer>
+    </div>
+</body>
+</html>
